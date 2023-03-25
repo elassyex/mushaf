@@ -1,0 +1,254 @@
+{% extends 'base/basa.html' %}
+{% load static %}
+{% block content %}
+
+<body class="LoadedBody" style="padding-top:120px;">
+<link rel='stylesheet' href="{% static 'view.css' %}">
+<div class="singleMaster">
+    <div class="PosterShape" style='background-image: url({% get_media_prefix %}{{movie.poster}});'></div>
+    <div class="container">
+        <div class="rightSingle" dir='rtl'>
+            <div class="hold">
+                <div class="Poster">
+                    <img src="{% get_media_prefix %}{{movie.poster}}" alt="{{movie.title}}">
+                </div>
+                <div class="InfoPartOne" itemprop="video" itemscope="" itemtype="https://schema.org/VideoObject">
+                    <h1 itemprop="name" class="Title">{{movie.title}}</h1>
+
+                    <div class="StoryLine">
+                        <h3><i class='bx bxs-quote-alt-right' ></i> قصة العرض</h3>
+                            <p class="descrip" style="display:none;">{{movie.title}}
+                            &nbsp;</p>
+                            <p class="descrip">{{movie.description}}
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="leftSingle" dir='rtl'>
+            <div class="HoldINfo"dir='rtl'>
+                <div class="MetaTermsInfo"dir='rtl'>
+                    <li>
+                    <!-- <div class="icon"><i class="far fa-stream"></i></div> -->
+                    <span>التقييم : </span>
+                    <a href="#">{{movie.rate}}</a>
+                    </li>
+                    <li>
+                    <!-- <div class="icon"><i class="fas fa-play"></i></div> -->
+                    <span>النوع : </span>
+                    <a href="{% url 'geners' movie.category %}">{{movie.category}}</a>
+                    </li>
+                    <li>
+                    <!-- <div class="icon"><i class='bx bxs-timer'></i></div> -->
+                    <span>مدة العرض : </span>
+                    <a href="javascript:void(0)">{{movie.lent}} دقيقة</a>
+                    </li>
+                    <li>
+                    <!-- <ul class="icon"><i class='bx bxs-calendar'></i></ul> -->
+                    <span>السنه : </span>
+                    <a href='#'>{{movie.year}}</a>
+                    </li>
+                    <li>
+                    <!-- <div class="icon"><i class="fa fa-language"></i></div> -->
+                    <span>اللغة : </span>
+                    <a href="">{{movie.made}}</a>
+                    </li>
+                    <li>
+                    <!-- <div class="icon"><i class="fas fa-camera-movie"></i></div> -->
+                    <span>الجودة : </span>
+                    <a href="">WEB-DL</a>
+                    </li>
+                    <li>
+                    <!-- <div class="icon"><i class="fa fa-globe"></i></div> -->
+                    <span>الدولة : </span>
+                    <a href="">{{movie.country}}</a>
+                    </li>
+                    <li>
+                    <!-- <ul class="icon"><i class='bx bxs-calendar'></i></ul> -->
+                    <span>اليوم : </span>
+                    <a href="javascript:void(0)">{{movie.created}}</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+                <!-- <ul class="SingleContentTerms">
+                    <li>
+                        <a href="https://ciimaclub.beauty/release-year/2021"><i class="ion ion-md-calendar"></i><em>سنة الإنتاج</em>
+                            <span>2021</span>
+                        </a>
+                    </li>
+                </ul> -->
+    </div>
+            <!-- {% comment %} <div class="WatchButtons"> {% endcomment %}
+            <div class="item-action" style="text-align: center;">
+                <a href="/watcha/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%A9-%D9%81%D9%8A%D9%84%D9%85-%D8%A7%D9%84%D9%83%D9%86%D8%B2/" class="btn btn-hover">
+                    <i class="bx bxs-right-arrow"></i>
+                    <span>Watch now</span>
+                </a>
+            </div>
+            {% comment %} </div> {% endcomment %} -->
+            </div>
+            <div style="height: 42px; overflow: hidden; width: 100%;  text-align:center" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: var(--main-color);"></path></svg></div>
+            <div style="height: 42px; overflow: hidden; width: 100%;  text-align:center;transform: rotate(-0.50turn);" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: var(--main-color);"></path></svg></div>
+
+
+    </div>
+    </div>
+    </div>
+    <div class="Watch--mushav--Single">
+        <div class="WatchServers" >
+            <titleshape>سيرفرات المشاهدة</titleshape>
+            <ul class="WatchServersList" id='wach'>
+                <li class="MyCimaServer ">
+                        <btn data-url="https://vadbam.net/embed-https:.html?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" class="hoverable activable"><i class='bx bxl-medium-old'></i>
+                            <strong>VIDBOM.COM</strong>
+                        </btn>
+                </li>
+                <li style="--color:#ACB953;" class='selected'>
+                    <btn data-url="https://viidshar.com/embed-https:.html?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" class="hoverable activable">
+                        <i class='bx bxl-medium-old'>
+                            
+                        </i>
+                        <strong>vidshare.tv</strong>
+                    </btn>
+                </li>
+                <li style="--color:#17F135;">
+                        <btn data-url="https://myviid.com/embed-1x3cbytm7qe1.html" class="hoverable activable"><i class='bx bxl-medium-old'>
+
+                        </i>
+                        <strong>MyViD</strong>
+                    </btn>
+                </li>
+                <li style="--color:#E4E44C;">
+                    <btn data-url="https://govad.xyz/embed-ihyu65hdxz2f
+                    .html?Key=3kco6Xb__7mhIq_Qu-I9EQ&Expires=1678474505" class="hoverable activable">
+                        <i class='bx bxl-medium-old'></i>
+                        <strong>GoViD</strong>
+                    </btn>
+                </li>
+                <li style="--color:#FDB506;">
+                    <btn data-url="https://dood.to/e/docdmoj7h33a?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" class="hoverable activable">
+                        <i class='bx bxl-medium-old'></i>
+                        <strong>DooD</strong>
+                    </btn>
+                </li>
+                <li style="--color:#4C85BF;">
+                    <btn data-url="https://uptostream.com/iframe/767jgsb2n05x
+                            /?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" class="hoverable activable">
+                            <i class='bx bxl-medium-old'></i>
+                        <strong>UPTOSTREAM</strong>
+                    </btn>
+                </li>
+                <li style="--color:#224460;">
+                    <btn data-url="https://uqload.com/embed-jrd9lijvrosc
+                        .html?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" class="hoverable activable">
+                        <i class='bx bxl-medium-old'></i>
+                    <strong>uqload.com</strong>
+                </btn>
+                </li>
+                <li style="--color:#5D57F3;">
+                    <btn data-url="https://userload.co/embed/9dcd976f54c9
+                            /?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" class="hoverable activable">
+                            <i class='bx bxl-medium-old'></i>
+                            <strong>Userload</strong>
+                        </btn>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div class="WatchServersEmbed">
+            <div class="Inner--WatchServersEmbed">
+                <iframe name="watch" src="https://dood.to/e/docdmoj7h33a?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294" id="IframeEmbed" height="100%" width="100%" allowfullscreen="" frameborder="0" scrolling="no">
+
+                </iframe>
+                <div class="loader">
+                    <svg class="circular" viewBox="25 25 50 50">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+                    </svg>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="Download--mushav--Single">
+        <titleshape>سيرفرات التحميل</titleshape>
+            <ul class="List--Download--mushav--Single">
+                <li>
+                    <a class="hoverable activable" target="_blank" href="https://upbaam.com/oy32dvfzgyq7/The.Ottoman.S04-E17.1080p.NoorPlay.WEB-DL.MyCima.world.mp4.html?Key=3muUtL8iRN8QFb6KNy70Lg&amp;Expires=1678415294">
+                        <quality> HDTV</quality>
+                        <resolution><i class="ion ion-md-tv">
+
+                        </i> 1080p Full HD</resolution><i class="fal fa-arrow-to-bottom">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    {% if 'مسلسل' in movie.title %}
+    <div class="container">
+        <div class="EpisodesArea">
+            <div class="TitleCenteral">
+                <h3>الحلقات و <span>المواسم</span></h3>
+            </div>
+            <div class="SeasonsListHolder">
+                <ul>
+                    <li data-slug="%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d8%ba%d8%b1%d9%81%d8%a9-207-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84" class="active" data-id="531398" data-season="288410"><i class="fa fa-folder"></i>الموسم <span> الاول</span></li>
+                </ul>
+            </div>
+    
+            <div class="ContainerEpisodesList">
+
+                {% for espa in espas %}
+                <a class="active" href="{% url 'viewser' espa.serie.movieid espa.season espa.numbera %}">
+
+                    الحلقة
+
+                    <em> {{espa.numbera}}</em>
+
+                </a>
+                {% endfor %}
+
+            </div>
+
+            <div style="clear: both;"></div>
+
+        </div>
+
+        <div style="clear: both;"></div>
+        </div>
+    {% endif %}
+        <!-- <div class="container">
+            <div class="Watch--mushav--Single">
+                <ul>
+                {% for espa in espas %}
+                    <a>
+                        <a class="hoverable activable" target="_blank" href="#"> {{espa.numbera}}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+        </div> -->
+    <script>
+        var navUl = [].slice.call(document.querySelectorAll('#wach > li'));
+        let ifr = document.querySelector('#IframeEmbed')
+        for (var y = 0; y < navUl.length; y++) {
+          navUl[y].addEventListener('click', checkLi);
+        }
+        
+        function checkLi(event) {
+          navUl.forEach(el => el.classList.remove('selected'));
+          event.currentTarget.classList.add('selected');
+          var x = (event.currentTarget.querySelector('btn').getAttribute('data-url'));
+          ifr.setAttribute('src', x);
+//            if (checkLi){
+                //console.log(event.currentTarget.('btn').innerText)
+            //}
+        }
+    </script>
+</body>
+{% include 'base/fotter.html' %}
+{% endblock content %}

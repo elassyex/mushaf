@@ -1,0 +1,78 @@
+{% extends 'base/basa.html' %}
+{% block content %}
+{% load static %}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel='stylesheet' href="{% static 'mov.css' %}">
+{% if 'series' in request.path %}
+<div class="Grid--Mushav">
+
+
+    {% for sera in ser %}
+        <div class="GridItem" cpd="433824">
+            <div class="Thumb--GridItem">
+                <a href="/serie/{{sera.movieid}}/" title="{{sera.title}}">
+                    <span class="BG--GridItem" style='--image:url("{% get_media_prefix %}{{sera.poster}}");'></span>
+                        <div class="Episode--number">
+                            {% comment %} {% for esp in serie %} {% endcomment %}
+                            <em>حلقة</em>
+                            <span>{{serie.numbera}}</span>
+                            {% comment %} {% endfor %} {% endcomment %}
+                        </div>
+                        <div class='titlemov'>
+                            <strong dir="auto" class="hasyear">{{sera.title}}<span class="year">({{sera.year}})</span></strong>
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% elif 'serie' in request.path %}
+<div class="Grid--Mushav">
+    {% for sera in serie %}
+        <div class="GridItem" cpd="433824">
+            <div class="Thumb--GridItem">
+                <a href="/view/{{sera.serie.movieid}}/{{sera.season}}/{{sera.numbera}}" title="{{sera.title}}">
+                    <span class="BG--GridItem" style='--image:url("{% get_media_prefix %}{{sera.serie.poster}}");'></span>
+                        <div class="Episode--number">
+                            {% comment %} {% for esp in serie %} {% endcomment %}
+                            <em>حلقة</em>
+                            <span>{{sera.numbera}}</span>
+                            {% comment %} {% endfor %} {% endcomment %}
+                        </div>
+                        <div class='titlemov'>
+                            <strong dir="auto" class="hasyear">{{sera.title}}<span class="year">({{sera.serie.year}})</span></strong>
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% elif 'category' or label in request.path %}
+<div class="Grid--Mushav">
+    {% for sera in object_list %}
+        {% comment %} <h1>{{sera.category}}</h1> {% endcomment %}
+        <div class="GridItem" cpd="433824">
+            <div class="Thumb--GridItem">
+                {% comment %} <h2>{{sera.category}}</h2> {% endcomment %}
+                <a href="/serie/{{sera.movieid}}/" title="{{sera.title}}">
+                    <span class="BG--GridItem" style='--image:url("{% get_media_prefix %}{{sera.poster}}");'></span>
+                        <div class="Episode--number">
+                            {% comment %} {% for esp in serie %} {% endcomment %}
+                            {% comment %} <em>حلقة</em> {% endcomment %}
+                            <span>{{sera.status}}</span>
+                            {% comment %} {% endfor %} {% endcomment %}
+                        </div>
+                        <div class='titlemov'>
+                            <strong dir="auto" class="hasyear">{{sera.title}}<span class="year">({{sera.year}})</span></strong>
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% include 'base/fotter.html' %}
+{% endblock content %}

@@ -1,0 +1,105 @@
+{% extends 'base/basa.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    :root {
+        --main-color: #f5c518;
+        --body-bg: #181616;
+        --box-bg: #221f1f;
+        --text-color: #ffffff;
+      
+        --nav-height: 60px;
+        --space-top: 30px;
+      }
+
+
+    .nav ul{
+        list-style-type: none;
+        margin-left: 300px;
+        padding: 0;
+        
+    }
+    .nav-menu-md li {
+        float:left;
+        text-align: center;
+        padding: 5px;
+        margin: 0 4px 8px;
+        width: 10em;
+        border-radius:7%;
+        border-left: 6px solid #f5c518;
+        background-color: var(--body-bg);
+    }
+    .nav-menu-md a:hover{
+        color: var(--main-color);
+        background-color: var(--body-bg);
+    }
+    .nav-menu-md a:focus{
+        color: #f5c518;;
+    }
+    #servers{
+        border: 5px solid #221f1f;
+        border-width: 5px 5px;
+        border-radius: 50px;
+        margin: 90px;
+        padding: 30px;
+        text-align: center;
+        
+    }
+    #servers h2{
+
+        border: 1px dotted var(--main-color);
+        border-radius: 40px;
+        width:300px;
+        height: fit-content;
+        border-width: 1px 1px 1px;
+        position: relative;
+        margin: auto;
+        padding: 5px;
+    }
+
+</style>
+<script>
+    function chan(id){
+        let d = window.document.getElementById('frame');
+        $.ajax({
+            type: 'GET',
+            url:window.location.toString(),
+            data : 'id='+d,
+            success: function(data){
+                if(window.location.toString().includes('Upload')){
+                    $('#frame').html('<iframe width="600" height="480" src="https://dood.yt/e/3y6gdmrdx6oga2bjdujdzkwyxy81pq2i" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>')
+                }
+                else if(window.location.toString().includes('ok')){
+                    $('#frame').html('<iframe width="750" height="415" src="//ok.ru/videoembed/33189988999" frameborder="0" allow="autoplay" allowfullscreen></iframe>')
+                }
+            }
+        });
+
+    }
+
+</script>
+{% for mov in movie %}
+{{ mov.year }}
+{% endfor %}
+<div class='container' id='servers'>
+    <h2>سيرفرات المشاهدة</h2>
+    <div class='container' style='text-align:center;display:inline;'>
+        <!-- <div id='nava' class="w3-bar"> -->
+        <div class="nav">
+            <ul class="nav-menu-md" id="nav-menu">
+                <li><a id='ok'  href='#ok' onclick="chan('frame')" >OK</a>
+
+                </li>
+                <li><a id='Upload' href='#Upload' onclick="chan('frame')">Upload</a>
+                </li>
+                <li><a id='Shof' href='#Shof' onclick="chan('frame')">Shof</a></li>
+            </ul>
+        </div>
+        <!-- </div> -->
+        <div id='frame' class='md-5'><iframe width="750" height="415" src="//ok.ru/videoembed/33189988999" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{% include 'base/fotter.html' %}
+{% endblock content %}

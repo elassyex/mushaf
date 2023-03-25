@@ -1,0 +1,1 @@
+web: gunicorn movash.wsgi:application --log-file -

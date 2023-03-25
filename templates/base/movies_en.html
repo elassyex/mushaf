@@ -1,0 +1,199 @@
+{% extends 'base/basa.html' %}
+{% block content %}
+{% load static %}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel='stylesheet' href="{% static 'mov.css' %}">
+{% comment %} <div class="advanced-search page-head">
+    <div class="container block-lvl">
+        <div class="row">
+    
+        <h1 class="col-12 col-m-5"><i class="ti-movie-creation"></i>افلام اجنبي</h1>
+    
+        <form class="form-ui small col-12 col-m-7 row gutter-small">
+
+            <label class="col-12 col-m-2">ترتيب حسب</label>
+    
+            <div class="col-12 col-s-6 col-m-4">
+                <div class="dropdown select-menu active">
+                    <a href="#" class="ti-arrow-down-chevron dropdown-btn form-control small rounded">-- النوع --</a>
+                    <ul class="dropdown-list form-ui">
+                        <li data-tax="genre" data-cat=""><label class="checkbox filters-li"><input name="genre" type="radio"> <span class="ti-checkmark-bold">الكل</span> </label> </li>
+                        <li data-tax="genre" data-cat="Drama"><label class="checkbox filters-li"><input value="171553" name="genre" type="radio"> <span class="ti-checkmark-bold">Drama</span> </label> </li>
+                        <li data-tax="genre" data-cat="Game-Show"><label class="checkbox filters-li"><input value="144382" name="genre" type="radio"> <span class="ti-checkmark-bold">Game-Show</span> </label> </li>
+                        <li data-tax="genre" data-cat="News"><label class="checkbox filters-li"><input value="155023" name="genre" type="radio"> <span class="ti-checkmark-bold">News</span> </label> </li>
+                        <li data-tax="genre" data-cat="Reality-TV"><label class="checkbox filters-li"><input value="144354" name="genre" type="radio"> <span class="ti-checkmark-bold">Reality-TV</span> </label> </li>
+                        <li data-tax="genre" data-cat="Talk-Show"><label class="checkbox filters-li"><input value="143913" name="genre" type="radio"> <span class="ti-checkmark-bold">Talk-Show</span> </label> </li>
+                        <li data-tax="genre" data-cat="اثارة"><label class="checkbox filters-li"><input value="130828" name="genre" type="radio"> <span class="ti-checkmark-bold">اثارة</span> </label> </li>
+                        <li data-tax="genre" data-cat="اكشن"><label class="checkbox filters-li"><input value="130697" name="genre" type="radio"> <span class="ti-checkmark-bold">اكشن</span> </label> </li>
+                        <li data-tax="genre" data-cat="الواقعي"><label class="checkbox filters-li"><input value="167695" name="genre" type="radio"> <span class="ti-checkmark-bold">الواقعي</span> </label> </li>
+                        <li data-tax="genre" data-cat="تاريخي"><label class="checkbox filters-li"><input value="130700" name="genre" type="radio"> <span class="ti-checkmark-bold">تاريخي</span> </label> </li>
+                        <li data-tax="genre" data-cat="ﺗﺸﻮﻳﻖ ﻭﺇﺛﺎﺭﺓ"><label class="checkbox filters-li"><input value="131049" name="genre" type="radio"> <span class="ti-checkmark-bold">ﺗﺸﻮﻳﻖ ﻭﺇﺛﺎﺭﺓ</span> </label> </li>
+                        <li data-tax="genre" data-cat="جريمة"><label class="checkbox filters-li"><input value="130847" name="genre" type="radio"> <span class="ti-checkmark-bold">جريمة</span> </label> </li>
+                        <li data-tax="genre" data-cat="ﺣﺮﻛﺔ"><label class="checkbox filters-li"><input value="131050" name="genre" type="radio"> <span class="ti-checkmark-bold">ﺣﺮﻛﺔ</span> </label> </li>
+                        <li data-tax="genre" data-cat="حروب"><label class="checkbox filters-li"><input value="130701" name="genre" type="radio"> <span class="ti-checkmark-bold">حروب</span> </label> </li>
+                        <li data-tax="genre" data-cat="خيال علمي"><label class="checkbox filters-li"><input value="130749" name="genre" type="radio"> <span class="ti-checkmark-bold">خيال علمي</span> </label> </li>
+                        <li data-tax="genre" data-cat="دراما"><label class="checkbox filters-li"><input value="130699" name="genre" type="radio"> <span class="ti-checkmark-bold">دراما</span> </label> </li>
+                        <li data-tax="genre" data-cat="ديني"><label class="checkbox filters-li"><input value="161661" name="genre" type="radio"> <span class="ti-checkmark-bold">ديني</span> </label> </li>
+                        <li data-tax="genre" data-cat="رسوم متحركة"><label class="checkbox filters-li"><input value="161476" name="genre" type="radio"> <span class="ti-checkmark-bold">رسوم متحركة</span> </label> </li>
+                        <li     data-tax="genre" data-cat="رعب"><label class="checkbox filters-li"><input value="130862" name="genre" type="radio"> <span class="ti-checkmark-bold">رعب</span> </label> </li>
+                        <li data-tax="genre" data-cat="رومانسي"><label class="checkbox filters-li"><input value="130905" name="genre" type="radio"> <span class="ti-checkmark-bold">رومانسي</span> </label> </li>
+                        <li data-tax="genre" data-cat="رياضي"><label class="checkbox filters-li"><input value="130725" name="genre" type="radio"> <span class="ti-checkmark-bold">رياضي</span> </label> </li>
+                        <li data-tax="genre" data-cat="سيرة ذاتية"><label class="checkbox filters-li"><input value="130724" name="genre" type="radio"> <span class="ti-checkmark-bold">سيرة ذاتية</span> </label> </li>
+                        <li data-tax="genre" data-cat="شبابي"><label class="checkbox filters-li"><input value="170740" name="genre" type="radio"> <span class="ti-checkmark-bold">شبابي</span> </label> </li>
+                        <li data-tax="genre" data-cat="صداقة"><label class="checkbox filters-li"><input value="147025" name="genre" type="radio"> <span class="ti-checkmark-bold">صداقة</span> </label> </li>
+                        <li data-tax="genre" data-cat="عائلي"><label class="checkbox filters-li"><input value="130904" name="genre" type="radio"> <span class="ti-checkmark-bold">عائلي</span> </label> </li>
+                        <li data-tax="genre" data-cat="غموض"><label class="checkbox filters-li"><input value="130848" name="genre" type="radio"> <span class="ti-checkmark-bold">غموض</span> </label> </li>
+                        <li data-tax="genre" data-cat="فانتازيا"><label class="checkbox filters-li"><input value="130639" name="genre" type="radio"> <span class="ti-checkmark-bold">فانتازيا</span> </label> </li>
+                        <li data-tax="genre" data-cat="قصير"><label class="checkbox filters-li"><input value="131285" name="genre" type="radio"> <span class="ti-checkmark-bold">قصير</span> </label> </li>
+                        <li data-tax="genre" data-cat="كرتون"><label class="checkbox filters-li"><input value="132199" name="genre" type="radio"> <span class="ti-checkmark-bold">كرتون</span> </label> </li>
+                        <li data-tax="genre" data-cat="كوميدي"><label class="checkbox filters-li"><input value="130903" name="genre" type="radio"> <span class="ti-checkmark-bold">كوميدي</span> </label> </li>
+                        <li data-tax="genre" data-cat="مسابقات"><label class="checkbox filters-li"><input value="157241" name="genre" type="radio"> <span class="ti-checkmark-bold">مسابقات</span> </label> </li>
+                        <li data-tax="genre" data-cat="مغامرات"><label class="checkbox filters-li"><input value="130698" name="genre" type="radio"> <span class="ti-checkmark-bold">مغامرات</span> </label> </li>
+                        <li data-tax="genre" data-cat="موسيقي"><label class="checkbox filters-li"><input value="132714" name="genre" type="radio"> <span class="ti-checkmark-bold">موسيقي</span> </label> </li>
+                        <li data-tax="genre" data-cat="وثائقي"><label class="checkbox filters-li"><input value="131284" name="genre" type="radio"> <span class="ti-checkmark-bold">وثائقي</span> </label> </li>
+                        <li data-tax="genre" data-cat="ويسترون"><label class="checkbox filters-li"><input value="133337" name="genre" type="radio"> <span class="ti-checkmark-bold">ويسترون</span> </label> </li>
+                    </ul>
+                </div>
+            </div>
+    
+                <div class="col-12 col-s-6 col-m-3">
+                    <div class="dropdown select-menu">
+                        <a href="#" class="ti-arrow-down-chevron dropdown-btn form-control small rounded">-- السنة --</a>
+                        <ul class="dropdown-list form-ui">
+                            <li data-tax="release-year" data-cat=""><label class="checkbox filters-li"><input name="release-year" type="radio"> <span class="ti-checkmark-bold">الكل</span> </label> </li>
+                            <li data-tax="release-year" data-cat="218"><label class="checkbox filters-li"><input value="148914" name="release-year" type="radio"> <span class="ti-checkmark-bold">218</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2025"><label class="checkbox filters-li"><input value="171307" name="release-year" type="radio"> <span class="ti-checkmark-bold">2025</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2023"><label class="checkbox filters-li"><input value="168548" name="release-year" type="radio"> <span class="ti-checkmark-bold">2023</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2022"><label class="checkbox filters-li"><input value="157136" name="release-year" type="radio"> <span class="ti-checkmark-bold">2022</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2021"><label class="checkbox filters-li"><input value="131837" name="release-year" type="radio"> <span class="ti-checkmark-bold">2021</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2020"><label class="checkbox filters-li"><input value="131842" name="release-year" type="radio"> <span class="ti-checkmark-bold">2020</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2019"><label class="checkbox filters-li"><input value="131833" name="release-year" type="radio"> <span class="ti-checkmark-bold">2019</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2018"><label class="checkbox filters-li"><input value="132127" name="release-year" type="radio"> <span class="ti-checkmark-bold">2018</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2017"><label class="checkbox filters-li"><input value="132368" name="release-year" type="radio"> <span class="ti-checkmark-bold">2017</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2016"><label class="checkbox filters-li"><input value="137689" name="release-year" type="radio"> <span class="ti-checkmark-bold">2016</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2015"><label class="checkbox filters-li"><input value="131975" name="release-year" type="radio"> <span class="ti-checkmark-bold">2015</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2014"><label class="checkbox filters-li"><input value="131951" name="release-year" type="radio"> <span class="ti-checkmark-bold">2014</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2013"><label class="checkbox filters-li"><input value="131861" name="release-year" type="radio"> <span class="ti-checkmark-bold">2013</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2012"><label class="checkbox filters-li"><input value="142655" name="release-year" type="radio"> <span class="ti-checkmark-bold">2012</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2011"><label class="checkbox filters-li"><input value="131883" name="release-year" type="radio"> <span class="ti-checkmark-bold">2011</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2010"><label class="checkbox filters-li"><input value="134107" name="release-year" type="radio"> <span class="ti-checkmark-bold">2010</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2009"><label class="checkbox filters-li"><input value="139628" name="release-year" type="radio"> <span class="ti-checkmark-bold">2009</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2008"><label class="checkbox filters-li"><input value="133145" name="release-year" type="radio"> <span class="ti-checkmark-bold">2008</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2007"><label class="checkbox filters-li"><input value="133133" name="release-year" type="radio"> <span class="ti-checkmark-bold">2007</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2006"><label class="checkbox filters-li"><input value="137401" name="release-year" type="radio"> <span class="ti-checkmark-bold">2006</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2005"><label class="checkbox filters-li"><input value="142116" name="release-year" type="radio"> <span class="ti-checkmark-bold">2005</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2004"><label class="checkbox filters-li"><input value="141247" name="release-year" type="radio"> <span class="ti-checkmark-bold">2004</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2003"><label class="checkbox filters-li"><input value="143803" name="release-year" type="radio"> <span class="ti-checkmark-bold">2003</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2002"><label class="checkbox filters-li"><input value="132619" name="release-year" type="radio"> <span class="ti-checkmark-bold">2002</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2001"><label class="checkbox filters-li"><input value="143802" name="release-year" type="radio"> <span class="ti-checkmark-bold">2001</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2000"><label class="checkbox filters-li"><input value="132550" name="release-year" type="radio"> <span class="ti-checkmark-bold">2000</span> </label> </li>
+                            <li data-tax="release-year" data-cat="2-23"><label class="checkbox filters-li"><input value="171644" name="release-year" type="radio"> <span class="ti-checkmark-bold">2-23</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1999"><label class="checkbox filters-li"><input value="134261" name="release-year" type="radio"> <span class="ti-checkmark-bold">1999</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1998"><label class="checkbox filters-li"><input value="145954" name="release-year" type="radio"> <span class="ti-checkmark-bold">1998</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1997"><label class="checkbox filters-li"><input value="145591" name="release-year" type="radio"> <span class="ti-checkmark-bold">1997</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1996"><label class="checkbox filters-li"><input value="143902" name="release-year" type="radio"> <span class="ti-checkmark-bold">1996</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1995"><label class="checkbox filters-li"><input value="145889" name="release-year" type="radio"> <span class="ti-checkmark-bold">1995</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1994"><label class="checkbox filters-li"><input value="151968" name="release-year" type="radio"> <span class="ti-checkmark-bold">1994</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1993"><label class="checkbox filters-li"><input value="134285" name="release-year" type="radio"> <span class="ti-checkmark-bold">1993</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1992"><label class="checkbox filters-li"><input value="145805" name="release-year" type="radio"> <span class="ti-checkmark-bold">1992</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1991"><label class="checkbox filters-li"><input value="145908" name="release-year" type="radio"> <span class="ti-checkmark-bold">1991</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1990"><label class="checkbox filters-li"><input value="152047" name="release-year" type="radio"> <span class="ti-checkmark-bold">1990</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1989"><label class="checkbox filters-li"><input value="150308" name="release-year" type="radio"> <span class="ti-checkmark-bold">1989</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1988"><label class="checkbox filters-li"><input value="153111" name="release-year" type="radio"> <span class="ti-checkmark-bold">1988</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1987"><label class="checkbox filters-li"><input value="145886" name="release-year" type="radio"> <span class="ti-checkmark-bold">1987</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1986"><label class="checkbox filters-li"><input value="152677" name="release-year" type="radio"> <span class="ti-checkmark-bold">1986</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1985"><label class="checkbox filters-li"><input value="145906" name="release-year" type="radio"> <span class="ti-checkmark-bold">1985</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1984"><label class="checkbox filters-li"><input value="152681" name="release-year" type="radio"> <span class="ti-checkmark-bold">1984</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1983"><label class="checkbox filters-li"><input value="158041" name="release-year" type="radio"> <span class="ti-checkmark-bold">1983</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1982"><label class="checkbox filters-li"><input value="152674" name="release-year" type="radio"> <span class="ti-checkmark-bold">1982</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1981"><label class="checkbox filters-li"><input value="152671" name="release-year" type="radio"> <span class="ti-checkmark-bold">1981</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1980"><label class="checkbox filters-li"><input value="152668" name="release-year" type="radio"> <span class="ti-checkmark-bold">1980</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1979"><label class="checkbox filters-li"><input value="145831" name="release-year" type="radio"> <span class="ti-checkmark-bold">1979</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1978"><label class="checkbox filters-li"><input value="143095" name="release-year" type="radio"> <span class="ti-checkmark-bold">1978</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1977"><label class="checkbox filters-li"><input value="145836" name="release-year" type="radio"> <span class="ti-checkmark-bold">1977</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1976"><label class="checkbox filters-li"><input value="145823" name="release-year" type="radio"> <span class="ti-checkmark-bold">1976</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1975"><label class="checkbox filters-li"><input value="145882" name="release-year" type="radio"> <span class="ti-checkmark-bold">1975</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1974"><label class="checkbox filters-li"><input value="145819" name="release-year" type="radio"> <span class="ti-checkmark-bold">1974</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1973"><label class="checkbox filters-li"><input value="146092" name="release-year" type="radio"> <span class="ti-checkmark-bold">1973</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1972"><label class="checkbox filters-li"><input value="145783" name="release-year" type="radio"> <span class="ti-checkmark-bold">1972</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1971"><label class="checkbox filters-li"><input value="145946" name="release-year" type="radio"> <span class="ti-checkmark-bold">1971</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1970"><label class="checkbox filters-li"><input value="158692" name="release-year" type="radio"> <span class="ti-checkmark-bold">1970</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1969"><label class="checkbox filters-li"><input value="162836" name="release-year" type="radio"> <span class="ti-checkmark-bold">1969</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1968"><label class="checkbox filters-li"><input value="139982" name="release-year" type="radio"> <span class="ti-checkmark-bold">1968</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1966"><label class="checkbox filters-li"><input value="170169" name="release-year" type="radio"> <span class="ti-checkmark-bold">1966</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1965"><label class="checkbox filters-li"><input value="158020" name="release-year" type="radio"> <span class="ti-checkmark-bold">1965</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1963"><label class="checkbox filters-li"><input value="158024" name="release-year" type="radio"> <span class="ti-checkmark-bold">1963</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1961"><label class="checkbox filters-li"><input value="158067" name="release-year" type="radio"> <span class="ti-checkmark-bold">1961</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1960"><label class="checkbox filters-li"><input value="162821" name="release-year" type="radio"> <span class="ti-checkmark-bold">1960</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1957"><label class="checkbox filters-li"><input value="158066" name="release-year" type="radio"> <span class="ti-checkmark-bold">1957</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1955"><label class="checkbox filters-li"><input value="158037" name="release-year" type="radio"> <span class="ti-checkmark-bold">1955</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1954"><label class="checkbox filters-li"><input value="156982" name="release-year" type="radio"> <span class="ti-checkmark-bold">1954</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1948"><label class="checkbox filters-li"><input value="158055" name="release-year" type="radio"> <span class="ti-checkmark-bold">1948</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1942"><label class="checkbox filters-li"><input value="170191" name="release-year" type="radio"> <span class="ti-checkmark-bold">1942</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1941"><label class="checkbox filters-li"><input value="170163" name="release-year" type="radio"> <span class="ti-checkmark-bold">1941</span> </label> </li>
+                            <li data-tax="release-year" data-cat="1940"><label class="checkbox filters-li"><input value="163778" name="release-year" type="radio"> <span class="ti-checkmark-bold">1940</span> </label> </li>
+                            <li data-tax="release-year" data-cat="0"><label class="checkbox filters-li"><input value="136424" name="release-year" type="radio"> <span class="ti-checkmark-bold">0</span> </label> </li>
+                        </ul>
+                    </div>
+                </div>
+    
+            <div class="col-12 col-s-6 col-m-3">
+                <div class="dropdown select-menu">
+                    <a href="#" class="ti-arrow-down-chevron dropdown-btn form-control small rounded">-- الجودة --</a>
+                    <ul class="dropdown-list form-ui">
+                        <li data-tax="quality" data-cat=""><label class="checkbox filters-li"><input name="quality" type="radio"> <span class="ti-checkmark-bold">الكل</span> </label> </li>
+                        <li data-tax="quality" data-cat="720p WEB-DL"><label class="checkbox filters-li"><input value="142987" name="quality" type="radio"> <span class="ti-checkmark-bold">720p WEB-DL</span> </label> </li>
+                        <li data-tax="quality" data-cat="720p HD"><label class="checkbox filters-li"><input value="131952" name="quality" type="radio"> <span class="ti-checkmark-bold">720p HD</span> </label> </li>
+                        <li data-tax="quality" data-cat="720 WEB-DL"><label class="checkbox filters-li"><input value="132035" name="quality" type="radio"> <span class="ti-checkmark-bold">720 WEB-DL</span> </label> </li>
+                        <li data-tax="quality" data-cat="1080p WEB-DL"><label class="checkbox filters-li"><input value="132069" name="quality" type="radio"> <span class="ti-checkmark-bold">1080p WEB-DL</span> </label> </li>
+                        <li data-tax="quality" data-cat="1080p HD"><label class="checkbox filters-li"><input value="140008" name="quality" type="radio"> <span class="ti-checkmark-bold">1080p HD</span> </label> </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div> {% endcomment %}
+{% if 'اجنبي' in request.path %}
+    <div class="Grid--Mushav">
+        {% for mov in movies %}
+            <div class="GridItem" cpd="433824">
+                <div class="Thumb--GridItem">
+                    <a href="/watcha/{{mov.movieid}}/" title="{{mov.title}}">
+                        <span class="BG--GridItem" style='--image:url("{% get_media_prefix %}{{mov.poster}}");'></span>
+                            {% comment %} <div class="Episode--number">
+                                <em>حلقة</em>
+                                <span>8</span>
+                            </div> {% endcomment %}
+                            <div class='titlemov'>
+                                <strong dir="auto" class="hasyear">{{mov.title}}<span class="year">({{mov.year}})</span></strong>
+                            </div>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% elif 'بوليوود' or 'bollywood' in request.path %}
+<div class="Grid--Mushav">
+    {% for mov in movies %}
+        <div class="GridItem" cpd="433824">
+            <div class="Thumb--GridItem">
+                <a href="/watcha/{{mov.movieid}}/" title="{{mov.title}}">
+                    <span class="BG--GridItem" style='--image:url("{% get_media_prefix %}{{mov.poster}}");'></span>
+                        {% comment %} <div class="Episode--number">
+                            <em>حلقة</em>
+                            <span>8</span>
+                        </div> {% endcomment %}
+                        <div class='titlemov'>
+                            <strong dir="auto" class="hasyear">{{mov.title}}<span class="year">({{mov.year}})</span></strong>
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% include 'base/fotter.html' %}
+{% endblock content %}

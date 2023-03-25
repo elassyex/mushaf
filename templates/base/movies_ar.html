@@ -1,0 +1,29 @@
+{% extends 'base/basa.html' %}
+{% block content %}
+{% load static %}
+{% comment %} {% for mov in movies %} {% endcomment %}
+<div class="Grid--Mushav">
+    {% for sera in movies %}
+        {% comment %} <h1>{{sera.category}}</h1> {% endcomment %}
+        <div class="GridItem" cpd="433824">
+            <div class="Thumb--GridItem">
+                {% comment %} <h2>{{sera.category}}</h2> {% endcomment %}
+                <a href="/view/{{sera.movieid}}/" title="{{sera.title}}">
+                    <span class="BG--GridItem" style='--image:url("{% get_media_prefix %}{{sera.poster}}");'></span>
+                        <div class="Episode--number">
+                            {% comment %} {% for esp in serie %} {% endcomment %}
+                            <em>{{sera.status}}</em>
+                            {% comment %} <span>{{sera.status}}</span> {% endcomment %}
+                            {% comment %} {% endfor %} {% endcomment %}
+                        </div>
+                        <div class='titlemov'>
+                            <strong dir="auto" class="hasyear">{{sera.title}}<span class="year">({{sera.year}})</span></strong>
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% include 'base/fotter.html' %}
+{% endblock content %}
