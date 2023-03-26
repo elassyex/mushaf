@@ -18,7 +18,7 @@ $(document).ready(() => {
         autoplayHoverPause: true
     })
     $('#top-movies-slide').owlCarousel({
-        items:6,
+        items:2,
         dots:false,
         loop:true,
         autoplay:false,
