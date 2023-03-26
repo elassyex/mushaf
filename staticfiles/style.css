@@ -370,7 +370,8 @@ a.movie-item:hover {
   position: relative;
   width: 65px;
   height:50px;
-  display: flex;
+  display: grid;
+  left:35px;
   justify-content: center;
   align-items: center;
   background-color: var(--text-color);
@@ -883,7 +884,7 @@ titleshape {
   visibility: visible;
   opacity: 1;
 }
-.top-movies-slide.movie-item{
+.top-movies-slide .movie-item{
   display: block;
   position: relative;
   overflow: hidden;
@@ -1095,13 +1096,13 @@ footer .content {
       font-size: 12px;
   }
   .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 1.8rem;
+    font-weight: 900;
   }
   .arlogo{
     font-family: 'thuluth-decorated';
     margin-left:0.5rem ;
-    font-size: 25px;
+    font-size: 28px;
   }
 
   .container {
@@ -1112,7 +1113,12 @@ footer .content {
       height: max-content;
       padding-top: unset;
   }
-
+  .item-content-title{
+    font-size: 3rem;
+  }
+  .hero-slide-item-content{
+    position: relative;
+  }
   .item-content-wraper {
       width: 100%;
       height: 100%;
@@ -1127,17 +1133,7 @@ footer .content {
     padding-right: 5rem;
     background-color: rgba(0, 0, 0, 0.2);
 }
-  .hero-slide-item-content {
-      position: relative;
-  }
 
-  .hero-slide-item img {
-      height: 100%;
-  }
-
-  .item-content-title {
-      font-size: 3rem;
-  }
 
   .hamburger-menu {
       display: grid;
@@ -1241,9 +1237,9 @@ footer .content {
     overflow-y:scroll;
     overflow-x: hidden;
     z-index: 109;
-
+    width: 90% !important;
     /* top: 59px !important;
-    width: 80% !important; */
+
     /* text-align: right; */
     /* position: fixed !important; */
     border: 1px solid #2f2f2f;
@@ -1362,7 +1358,7 @@ footer .content {
     margin: 0;
     padding: 0;
     /* top: 59px !important; */
-    width: 80% !important;
+    width: 90% !important;
     /* text-align: right; */
     /* position: fixed !important; */
     border: 1px solid #2f2f2f;
