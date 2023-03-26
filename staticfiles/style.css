@@ -1094,6 +1094,15 @@ footer .content {
   html {
       font-size: 12px;
   }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+  .arlogo{
+    font-family: 'thuluth-decorated';
+    margin-left:0.5rem ;
+    font-size: 28px;
+  }
 
   .container {
       padding: 0 15px;
@@ -1437,15 +1446,7 @@ footer .content {
   html {
       font-size: 12px;
   }
-  .logo {
-    font-size: 1.8rem;
-    font-weight: 900;
-  }
-  .arlogo{
-    font-family: 'thuluth-decorated';
-    margin-left:0.5rem ;
-    font-size: 28px;
-  }
+
   .container {
       padding: 0 15px;
   }
