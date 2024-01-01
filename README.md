@@ -1,1 +1,1 @@
-![Alt text](https://fastupload.io/ACEOgyITRktkzAf/preview "optional title")
+![Alt text](https://fastupload.io/ACEOgyITRktkzAf.img "optional title")
