@@ -9,5 +9,6 @@ sqlparse==0.4.3
 typing_extensions==4.5.0
 tzdata==2022.7
 gunicorn==20.1.0
-django-stubs-ext==4.9.0
-django-stubs==1.2.0
+django-stubs-ext
+django-stubs
+typing-extensions; python_version < "3.10"
