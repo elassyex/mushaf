@@ -132,5 +132,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['https://mushaf.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://mushaf-five.vercel.app']
 CORS_ALLOW_ALL_ORIGINS = True
