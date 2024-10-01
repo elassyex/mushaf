@@ -11,4 +11,4 @@ tzdata==2022.7
 gunicorn==20.1.0
 django-stubs-ext
 django-stubs
-typing-extensions; python_version < "3.10"
+typing-extensions==4.12.2
